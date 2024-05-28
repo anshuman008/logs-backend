@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const log = require('./routes/log');
 const app = express();
-const PORT = 8080;
 const cors = require('cors');
 const dotenv = require('dotenv')
 
@@ -24,8 +23,8 @@ async function connectDB() {
 }
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server is Started at Port ${PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server is Started at Port `);
 });
 
 // Use the log router
